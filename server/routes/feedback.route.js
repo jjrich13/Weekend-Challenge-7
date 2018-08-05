@@ -1,9 +1,6 @@
 var express = require('express');
 var router = express.Router();
-// var galleryItems = require('../modules/gallery.data');
 const pool = require('../modules/pool.js');
-
-
 
 
 // GET Route
@@ -18,6 +15,7 @@ router.get('/', function (req, res) {
     
 }); // END GET Route
 
+//POST route
 router.post('/', function (req, res) {
     console.log(req.body);
     
