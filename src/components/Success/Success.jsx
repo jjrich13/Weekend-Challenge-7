@@ -11,8 +11,8 @@ class Success extends Component {
     render() {
         return (
         <div>
-            <h1>Success</h1>
-            <button onClick={this.routeToNext}>Next</button>
+            <h1>Thank You!</h1>
+            <button onClick={this.routeToNext}>Leave New Feedback</button>
         </div>
         );
     }

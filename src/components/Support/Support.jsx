@@ -12,6 +12,7 @@ class Support extends Component {
         return (
         <div>
             <h1>Support</h1>
+            <input type="text" placeholder="Hpw well are you being supported?" />
             <button onClick={this.routeToNext}>Next</button>
         </div>
         );

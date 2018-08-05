@@ -12,6 +12,7 @@ class Comments extends Component {
         return (
         <div>
             <h1>Comments</h1>
+            <input type="text" placeholder="Any comments you want to leave?" />
             <button onClick={this.routeToNext}>Next</button>
         </div>
         );
