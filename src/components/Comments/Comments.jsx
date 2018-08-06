@@ -6,8 +6,11 @@ class Comments extends Component {
     constructor(props){
         super(props);
         this.state = {
+            feeling: '',
+            understanding: '',
+            support: '',
             comments: ''
-        };
+          };
     }
 
     handleChange = (event) => {
@@ -23,15 +26,15 @@ class Comments extends Component {
 
     handleSubmit = (event) => {
         event.preventDefault();
-        this.props.dispatch(
-            { type: 'STORE_COMMENTS', payload: this.state.comments },
-            this.props.history.push('/checkout')
-        )
+        
         axios({
             method: 'POST',
             url: '/api/feedback',
-            data: this.props.state
+            data: this.state
         }).then( response => {
+            this.props.dispatch(
+                { type: 'CLEAR_STATE'}
+            )
             this.routeToNext();
         }).catch( err => {
             console.log(err);  
@@ -39,11 +42,19 @@ class Comments extends Component {
         
     }
 
+    componentDidMount(){
+        this.setState({
+            feeling: this.props.state.feeling,
+            understanding: this.props.state.understanding,
+            support: this.props.state.support
+        })
+    }
+
     render() {
         return (
         <div>
             <h1>Comments</h1>
-            <input type="text" placeholder="Any comments you want to leave?" onChange={this.handleChange} />
+            <input autoFocus type="text" placeholder="Any comments you want to leave?" onChange={this.handleChange} />
             <button onClick={this.handleSubmit}>Submit Feedback</button>
         </div>
         );

@@ -32,7 +32,7 @@ const feedbackRedux = (state = initialState, action) => {
           return { ...state, 
             comments: action.payload
           }
-        case 'CLEAR_ORDER':
+        case 'CLEAR_STATE':
           return initialState
         default:
           return state

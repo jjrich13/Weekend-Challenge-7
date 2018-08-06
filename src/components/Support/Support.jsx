@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import axios from 'axios';
 import { connect } from 'react-redux'
 
 class Support extends Component {
@@ -34,7 +33,7 @@ class Support extends Component {
         return (
         <div>
             <h1>Support</h1>
-            <input type="text" placeholder="How well are you being supported?" onChange={this.handleChange} />
+            <input autoFocus type="number" placeholder="How well are you being supported?" onChange={this.handleChange} />
             <button onClick={this.handleNext}>Next</button>
         </div>
         );

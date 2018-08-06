@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import axios from 'axios';
 import { connect } from 'react-redux'
 
 class Feeling extends Component {
@@ -34,7 +33,7 @@ class Feeling extends Component {
         return (
         <div>
             <h1>Feeling</h1>
-            <input type="text" placeholder="How are you feeling today?" onChange={this.handleChange} />
+            <input autoFocus type="number" placeholder="How are you feeling today?" onChange={this.handleChange} />
             <button onClick={this.handleNext}>Next</button>
         </div>
         );
