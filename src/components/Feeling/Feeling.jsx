@@ -23,8 +23,7 @@ class Feeling extends Component {
     handleNext = (event) => {
         event.preventDefault();
         this.props.dispatch(
-            { type: 'STORE_FEELING', payload: this.state.feeling },
-            this.props.history.push('/checkout')
+            { type: 'STORE_FEELING', payload: this.state.feeling }
         )
         this.routeToNext();
     }

@@ -23,8 +23,7 @@ class Support extends Component {
     handleNext = (event) => {
         event.preventDefault();
         this.props.dispatch(
-            { type: 'STORE_SUPPORT', payload: this.state.support },
-            this.props.history.push('/checkout')
+            { type: 'STORE_SUPPORT', payload: this.state.support }
         )
         this.routeToNext();
     }

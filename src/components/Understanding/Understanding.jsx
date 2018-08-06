@@ -23,8 +23,7 @@ class Understanding extends Component {
     handleNext = (event) => {
         event.preventDefault();
         this.props.dispatch(
-            { type: 'STORE_UNDERSTANDING', payload: this.state.understanding },
-            this.props.history.push('/checkout')
+            { type: 'STORE_UNDERSTANDING', payload: this.state.understanding }
         )
         this.routeToNext();
     }
