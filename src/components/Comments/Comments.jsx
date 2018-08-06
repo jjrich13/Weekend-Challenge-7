@@ -3,6 +3,7 @@ import axios from 'axios';
 import { connect } from 'react-redux'
 
 class Comments extends Component {
+    //handling some async problems below....
     constructor(props){
         super(props);
         this.state = {
@@ -28,6 +29,8 @@ class Comments extends Component {
         event.preventDefault();
         
         axios({
+            //had oto use the this.state as data becuase of async problems and redux state not being updated, 
+            //not sure of another way to handle this problem but this seemed to work
             method: 'POST',
             url: '/api/feedback',
             data: this.state
@@ -43,6 +46,7 @@ class Comments extends Component {
     }
 
     componentDidMount(){
+        //again here bringing redux to this.state because redux state was not being updated properly before POST was happening
         this.setState({
             feeling: this.props.state.feeling,
             understanding: this.props.state.understanding,

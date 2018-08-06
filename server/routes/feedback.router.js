@@ -35,7 +35,7 @@ router.post('/', function (req, res) {
 router.delete('/:id', function (req, res) {
     
     
-    pool.query(`DELETE FROM "feedback" WHERE "id" = ${req.params.id};`)
+    pool.query(`DELETE FROM "feedback" WHERE "id" = $1;`, [req.params.id])
     .then( response => {
         res.sendStatus(201);
     })
