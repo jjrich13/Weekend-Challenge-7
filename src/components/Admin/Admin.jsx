@@ -66,6 +66,7 @@ class Admin extends Component {
 
     //for DIALOG WINDOWS
     handleClickOpen = (id) => {
+        //id is passed in and store in this.state so the dialog window will know which feedback item to delete when the delete function is triggered
         this.setState({ 
           open: true,
           idToDelete: id 
@@ -118,10 +119,10 @@ class Admin extends Component {
                         </DialogContentText>
                     </DialogContent>
                     <DialogActions>
-                        <Button onClick={this.handleClose} color="primary">
+                        <Button onClick={this.handleClose} color="primary" autoFocus>
                             Cancel
                         </Button>
-                        <Button onClick={() => this.handleDelete(this.state.idToDelete)} color="primary" autoFocus>
+                        <Button onClick={() => this.handleDelete(this.state.idToDelete)} color="primary">
                             Delete
                         </Button>
                     </DialogActions>

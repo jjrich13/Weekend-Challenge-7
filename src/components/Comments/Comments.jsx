@@ -30,7 +30,7 @@ class Comments extends Component {
         
         axios({
             //had oto use the this.state as data becuase of async problems and redux state not being updated, 
-            //not sure of another way to handle this problem but this seemed to work
+            //not sure of another way to handle this problem but this worked
             method: 'POST',
             url: '/api/feedback',
             data: this.state
